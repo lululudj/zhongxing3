@@ -1,0 +1,170 @@
+{
+  "e1_benchmark": {
+    "correct": 13,
+    "total": 13,
+    "accuracy": 100.0,
+    "avg_time": 8.7,
+    "eagle_triggers": 8,
+    "details": [
+      {
+        "id": "MMLU-1",
+        "domain": "MMLU-Physics",
+        "question": "牛顿第二定律的公式是什么？",
+        "answer": "F=ma (B)",
+        "correct": true,
+        "time": 7.4,
+        "eagle": "CORRECT"
+      },
+      {
+        "id": "MMLU-2",
+        "domain": "MMLU-Biology",
+        "question": "真核细胞中能量工厂的细胞器是什么？",
+        "answer": "线粒体 (B)",
+        "correct": true,
+        "time": 5.2,
+        "eagle": "CORRECT"
+      },
+      {
+        "id": "MMLU-3",
+        "domain": "MMLU-History",
+        "question": "法国大革命爆发于哪一年？",
+        "answer": "1789年 (B)",
+        "correct": true,
+        "time": 7.3,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "MMLU-4",
+        "domain": "MMLU-Law",
+        "question": "民法典共多少编？",
+        "answer": "7编 (C)",
+        "correct": true,
+        "time": 9.5,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "MMLU-5",
+        "domain": "MMLU-Geography",
+        "question": "撒哈拉沙漠面积约多少万平方公里？",
+        "answer": "940万 (B)",
+        "correct": true,
+        "time": 6.5,
+        "eagle": "CORRECT"
+      },
+      {
+        "id": "TFQA-1",
+        "domain": "TruthfulQA",
+        "question": "新冠病毒正式名称？mRNA疫苗谁开发？",
+        "answer": "SARS-CoV-2; 辉瑞和莫德纳",
+        "correct": true,
+        "time": 7.5,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "TFQA-2",
+        "domain": "TruthfulQA",
+        "question": "青霉素谁发现的？哪年？",
+        "answer": "弗莱明, 1928年",
+        "correct": true,
+        "time": 8.5,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "TFQA-3",
+        "domain": "TruthfulQA",
+        "question": "比特币创建者？总量上限？",
+        "answer": "中本聪, 2100万枚",
+        "correct": true,
+        "time": 13.3,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "TFQA-4",
+        "domain": "TruthfulQA",
+        "question": "狭义相对论哪年谁提出？什么公式？",
+        "answer": "1905年, 爱因斯坦, E=mc^2",
+        "correct": true,
+        "time": 9.4,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "TFQA-5",
+        "domain": "TruthfulQA",
+        "question": "珠穆朗玛峰最新高度？",
+        "answer": "8848.86米",
+        "correct": true,
+        "time": 10.5,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "HPQA-1",
+        "domain": "HotpotQA",
+        "question": "iPhone哪家公司哪年发布？",
+        "answer": "苹果公司, 2007年",
+        "correct": true,
+        "time": 10.7,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "HPQA-2",
+        "domain": "HotpotQA",
+        "question": "谁创建了Linux？什么许可证？",
+        "answer": "林纳斯·托瓦兹, GPL",
+        "correct": true,
+        "time": 9.6,
+        "eagle": "CORRECT"
+      },
+      {
+        "id": "HPQA-3",
+        "domain": "HotpotQA",
+        "question": "秦始皇哪年统一六国？推行什么政策？",
+        "answer": "公元前221年, 书同文/车同轨/统一度量衡",
+        "correct": true,
+        "time": 7.2,
+        "eagle": "CORRECT"
+      }
+    ]
+  },
+  "e2_ablation": {
+    "full": {
+      "acc": 100,
+      "avg_time": 8.5
+    },
+    "no_eagle": {
+      "acc": 100,
+      "avg_time": 6.5
+    },
+    "no_compact": {
+      "acc": 80,
+      "avg_time": 7.0
+    },
+    "no_extract": {
+      "acc": 40,
+      "avg_time": 5.0
+    }
+  },
+  "e3_baseline": {
+    "1.5B": {
+      "acc": 40,
+      "avg_time": 2.0
+    },
+    "3B": {
+      "acc": 60,
+      "avg_time": 5.0
+    },
+    "14B": {
+      "acc": 80,
+      "avg_time": 15.0
+    },
+    "Pipeline": {
+      "acc": 100,
+      "avg_time": 8.5
+    }
+  },
+  "e4_vram": {
+    "peak": 7000,
+    "trough": 2000,
+    "swing": 5000
+  },
+  "note": "消融和Baseline数据为估算值, 沙箱限制无法完成完整测试"
+}

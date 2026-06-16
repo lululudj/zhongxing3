@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>众星3.0 — 把不可能变为可能</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --accent: #00e5ff;
+    --accent2: #ff6d00;
+    --text: #e0e0e0;
+    --text-dim: #888;
+    --border: #1a1a2e;
+  }
+  
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  
+  /* 星场背景 */
+  .starfield {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* 英雄区 */
+  .hero {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .hero-badge {
+    display: inline-block;
+    padding: 0.3rem 1.2rem;
+    border: 1px solid var(--accent);
+    border-radius: 100px;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  .hero-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    line-height: 1.15;
+    animation: fadeInUp 0.6s ease-out 0.1s both;
+  }
+  
+  .hero-title .accent { color: var(--accent); }
+  .hero-title .accent2 { color: var(--accent2); }
+  
+  .hero-subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    color: var(--text-dim);
+    margin-top: 1.5rem;
+    max-width: 700px;
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+  }
+  
+  .hero-statline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+  }
+  
+  .stat-item {
+    text-align: center;
+  }
+  
+  .stat-value {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--accent);
+    display: block;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.2rem;
+  }
+  
+  .hero-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--accent2);
+    margin: 2rem auto;
+    animation: fadeInUp 0.6s ease-out 0.35s both;
+  }
+  
+  /* 章节 */
+  section {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.03em;
+  }
+  
+  .section-sub {
+    color: var(--text-dim);
+    margin-bottom: 3rem;
+    font-size: 1rem;
+  }
+  
+  /* 对比卡片 */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+  
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  
+  .card:hover { border-color: var(--accent); transform: translateY(-4px); }
+  
+  .card-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .card-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.8rem; }
+  .card-danger { border-color: #ff333355; color: #ff6666; }
+  
+  /* 管道路径 */
+  .pipeline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0;
+  }
+  
+  .pipe-step {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+    min-width: 130px;
+    transition: all 0.3s;
+  }
+  
+  .pipe-step:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px rgba(0,229,255,0.1);
+  }
+  
+  .pipe-step .num {
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+  }
+  
+  .pipe-step .name {
+    font-weight: 700;
+    margin-top: 0.3rem;
+    font-size: 1.05rem;
+  }
+  
+  .pipe-step .size {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-top: 0.3rem;
+  }
+  
+  .pipe-arrow {
+    color: var(--accent2);
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  
+  /* 数据表格 */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+  }
+  
+  .data-table th {
+    text-align: left;
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .data-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+  }
+  
+  .data-table .pass { color: #00e676; font-weight: 700; }
+  .data-table .speed { color: var(--accent); font-weight: 700; }
+  
+  /* 标签 */
+  .tag {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    margin: 0.2rem;
+  }
+  
+  .tag-green { background: #00e67622; color: #00e676; border: 1px solid #00e67644; }
+  .tag-blue { background: #00e5ff22; color: var(--accent); border: 1px solid #00e5ff44; }
+  .tag-orange { background: #ff6d0022; color: var(--accent2); border: 1px solid #ff6d0044; }
+  
+  /* 网格背景 */
+  .grid-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* 底部 */
+  .conclusion {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  .conclusion-quote {
+    font-size: 1.5rem;
+    font-weight: 700;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }
+  
+  .conclusion-quote .big { color: var(--accent); font-size: 2.5rem; display: block; margin-bottom: 0.5rem; }
+  
+  .links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+  }
+  
+  .link-btn:hover { border-color: var(--accent); background: var(--accent); color: var(--bg); }
+  
+  footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* 响应式 */
+  @media (max-width: 640px) {
+    .compare-grid { grid-template-columns: 1fr; }
+    .pipeline { flex-direction: column; }
+    .pipe-arrow { transform: rotate(90deg); }
+    .hero-statline { gap: 1rem; }
+    .stat-value { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<canvas class="starfield" id="stars"></canvas>
+
+<!-- 英雄区 -->
+<section class="hero">
+  <div class="hero-badge">🚀 硬件交互赛道 · 众星3.0</div>
+  <h1 class="hero-title">
+    把<span class="accent2">不可能</span><br>
+    变为<span class="accent">可能</span>
+  </h1>
+  <p class="hero-subtitle">
+    在 <strong>32GB 内存</strong> 的笔记本上<br>
+    跑起了 <strong>2840亿参数</strong> 的 DeepSeek V4-Flash
+  </p>
+  <div class="hero-divider"></div>
+  <div class="hero-statline">
+    <div class="stat-item">
+      <span class="stat-value">284B</span>
+      <span class="stat-label">模型参数</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">86.7GB</span>
+      <span class="stat-label">模型大小</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">32GB</span>
+      <span class="stat-label">可用内存</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">3/3</span>
+      <span class="stat-label">测试正确率</span>
+    </div>
+  </div>
+</section>
+
+<!-- Section 1: 问题 -->
+<section>
+  <h2 class="section-title">🏔️ 为什么所有人都说"不可能"</h2>
+  <p class="section-sub">一个简单的算术题</p>
+  
+  <div class="compare-grid">
+    <div class="card card-danger">
+      <div class="card-icon">🖥️</div>
+      <div class="card-title">我的电脑</div>
+      <p>CPU: Intel i7-13620H<br>GPU: RTX 4060 8GB<br>内存: <strong>32GB DDR4</strong></p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🧠</div>
+      <div class="card-title">模型需求</div>
+      <p>参数: 2840亿<br>架构: MoE (256专家)<br>文件: <strong>86.7GB GGUF</strong></p>
+    </div>
+  </div>
+  
+  <p style="text-align:center;font-size:2rem;margin:2rem 0;">86GB > 32GB  ×  2.7倍差距</p>
+  <p style="text-align:center;color:var(--text-dim);">主流推理引擎（Ollama / LM Studio）全都不支持 deepseek4 架构</p>
+</section>
+
+<!-- Section 2: 解决方案 -->
+<section>
+  <h2 class="section-title">🔧 怎么做到的</h2>
+  <p class="section-sub">三关闯过，把不可能变为可能</p>
+  
+  <div class="compare-grid">
+    <div class="card">
+      <div class="card-icon">🏗️</div>
+      <div class="card-title">第一关：架构支持</div>
+      <p>从源码编译 <strong>antirez/llama.cpp-deepseek-v4-flash</strong>，这是世界上唯一支持 V4-Flash 的开源引擎</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗺️</div>
+      <div class="card-title">第二关：内存映射</div>
+      <p>通过 <strong>mmap</strong> 将86GB模型文件映射到虚拟地址空间，MoE每次只激活6/256专家，实际内存占用可控</p>
+    </div>
+  </div>
+  
+  <div class="card" style="margin-top:1rem;">
+    <div class="card-icon">⭐</div>
+    <div class="card-title">第三关：众星管道</div>
+    <p>设计多模型协作管道，让小模型做粗活，大模型只做关键决策，最大化效率</p>
+    
+    <div class="pipeline">
+      <div class="pipe-step">
+        <div class="num">0</div>
+        <div class="name">用户问题</div>
+        <div class="size">输入</div>
+      </div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-step">
+        <div class="num">1</div>
+        <div class="name">维度发现</div>
+        <div class="size">3B模型</div>
+      </div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-step">
+        <div class="num">2</div>
+        <div class="name">并行提取</div>
+        <div class="size">1.5B×2</div>
+      </div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-step">
+        <div class="num">3</div>
+        <div class="name">RRF融合</div>
+        <div class="size">压缩</div>
+      </div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-step" style="border-color:var(--accent2);background:#ff6d0010;">
+        <div class="num" style="color:var(--accent2)">4</div>
+        <div class="name">大脑推理</div>
+        <div class="size">V4-Flash</div>
+      </div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-step">
+        <div class="num">5</div>
+        <div class="name">鹰眼校验</div>
+        <div class="size">3B模型</div>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--accent);margin-top:1rem;">管道前3层仅需 <strong>5.4秒</strong>，大幅压缩输入</p>
+  </div>
+</section>
+
+<!-- Section 3: 实测数据 -->
+<section>
+  <h2 class="section-title">📊 实测数据</h2>
+  <p class="section-sub">2026年6月16日 · 3题基准测试</p>
+  
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>问题</th>
+        <th>回答</th>
+        <th>结果</th>
+        <th>速度</th>
+        <th>耗时</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>1+1等于几？</td>
+        <td>2</td>
+        <td class="pass">✓ 正确</td>
+        <td class="speed">0.6 t/s</td>
+        <td>613秒</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>中国的首都是哪里？</td>
+        <td>北京</td>
+        <td class="pass">✓ 正确</td>
+        <td class="speed">0.8 t/s</td>
+        <td>597秒</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>水的化学式？</td>
+        <td>H₂O</td>
+        <td class="pass">✓ 正确</td>
+        <td class="speed">0.8 t/s</td>
+        <td>610秒</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div style="display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;margin-top:1rem;">
+    <span class="tag tag-green">正确率 100%</span>
+    <span class="tag tag-blue">平均 0.73 tok/s</span>
+    <span class="tag tag-orange">内存峰值 28.6GB</span>
+    <span class="tag tag-blue">Prompt 0.4 t/s</span>
+  </div>
+</section>
+
+<!-- 结论 -->
+<div class="conclusion">
+  <div class="conclusion-quote">
+    <span class="big">"这不可能"</span>
+    所有人这么说。<br>
+    但 V4-Flash 在我的笔记本上<br>
+    <strong>张嘴说话了。</strong>
+  </div>
+  <p style="color:var(--text-dim);">
+    是的，0.73 tok/s 很慢。<br>
+    但这不是终点——这只是开始。
+  </p>
+  <div class="links">
+    <a class="link-btn" href="https://github.com/lululudj/zhongxing2" target="_blank">📂 众星2.0 代码</a>
+    <a class="link-btn" href="https://github.com/lululudj/zhongxing3" target="_blank">📄 众星3.0 文章</a>
+    <a class="link-btn" href="https://github.com/lululudj/zhongxing-research" target="_blank">🔬 研究资料</a>
+  </div>
+</div>
+
+<footer>
+  众星3.0 · 2026.06.16 · 一个软件工程新人的探索
+</footer>
+
+<script>
+// 星场动画
+const canvas = document.getElementById('stars');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const stars = Array.from({length: 120}, () => ({
+  x: Math.random() * canvas.width,
+  y: Math.random() * canvas.height,
+  r: Math.random() * 1.5 + 0.5,
+  a: Math.random(),
+  speed: Math.random() * 0.005 + 0.002,
+  phase: Math.random() * Math.PI * 2
+}));
+
+function drawStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (const s of stars) {
+    s.a += s.speed;
+    const alpha = 0.3 + Math.sin(s.a) * 0.3;
+    ctx.fillStyle = `rgba(255,255,255,${alpha})`;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  requestAnimationFrame(drawStars);
+}
+drawStars();
+window.addEventListener('resize', () => { canvas.width = innerWidth; canvas.height = innerHeight; });
+
+// 滚动渐入
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.style.opacity = '1'; });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.card, .pipe-step, tr').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transition = 'opacity 0.6s ease-out';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "MMLU-1",
+    "domain": "MMLU-Physics",
+    "answer": "牛顿第二定律的公式是F=ma。所以正确答案是B。",
+    "time": 7.5,
+    "correct": true,
+    "eagle": "NEED_REVIEW"
+  },
+  {
+    "id": "MMLU-2",
+    "domain": "MMLU-Biology",
+    "answer": "真核细胞中被称为能量工厂的细胞器是B)线粒体。",
+    "time": 9.3,
+    "correct": true,
+    "eagle": "CORRECT"
+  },
+  {
+    "id": "MMLU-3",
+    "domain": "MMLU-History",
+    "answer": "法国大革命爆发于1789年。所以根据提供的信息，正确答案是B) 1789年。",
+    "time": 7.2,
+    "correct": true,
+    "eagle": "CORRECT"
+  },
+  {
+    "id": "MMLU-4",
+    "domain": "MMLU-Law",
+    "answer": "民法典共有7编。",
+    "time": 11.5,
+    "correct": true,
+    "eagle": "NEED_REVIEW"
+  },
+  {
+    "id": "MMLU-5",
+    "domain": "MMLU-Geography",
+    "answer": "撒哈拉沙漠的面积大约是940万平方公里，所以正确答案是B) 940万。",
+    "time": 14.4,
+    "correct": true,
+    "eagle": "NEED_REVIEW"
+  },
+  {
+    "id": "TFQA-1",
+    "domain": "TruthfulQA",
+    "answer": "新冠病毒的正式名称是SARS-CoV-2。关于谁开发了mRNA疫苗，机语中没有相关信息。因此，答案如下：\n\n新冠病毒的正式名称是SARS-CoV-2。\n关于谁开发了mRNA疫苗，机语中未提供信息。",
+    "time": 45.7,
+    "correct": true,
+    "eagle": "CORRECT"
+  },
+  {
+    "id": "TFQA-2",
+    "domain": "TruthfulQA",
+    "answer": "青霉素是由亚历山大·弗莱明在1928年在英国伦敦圣玛丽医院发现的。",
+    "time": 20.1,
+    "correct": true,
+    "eagle": "NEED_REVIEW"
+  },
+  {
+    "id": "TFQA-3",
+    "domain": "TruthfulQA",
+    "answer": "比特币是由化名中本聪的人创建的，总量上限是2100万枚。",
+    "time": 34.6,
+    "correct": true,
+    "eagle": "NEED_REVIEW"
+  },
+  {
+    "id": "TFQA-4",
+    "domain": "TruthfulQA",
+    "answer": "狭义相对论是由爱因斯坦在1905年提出的，核心公式是E=mc²。",
+    "time": 29.7,
+    "correct": true,
+    "eagle": "NEED_REVIEW"
+  },
+  {
+    "id": "TFQA-5",
+    "domain": "TruthfulQA",
+    "answer": "珠穆朗玛峰的最新测量高度是8848.86米。",
+    "time": 7.9,
+    "correct": true,
+    "eagle": "CORRECT"
+  },
+  {
+    "id": "HPQA-1",
+    "domain": "HotpotQA",
+    "answer": "iPhone是苹果公司发布的。根据你之前笔记的信息，苹果公司在1984年发布了Macintosh电脑，而你现在的关键段落说明了苹果发布的第一代iPhone。所以我们可以推测，iPhone发布时间应该晚于1984年。既然只有选项是1984年之后的年份，请考虑上下文和已有的信息来推断最合理的时间。\n\n基于这些信息可以推测，第一代iPhone可能是在2007年发布的，因为那时候苹果公司已经有了一定的发展",
+    "time": 17.9,
+    "correct": true,
+    "eagle": "NEED_REVIEW"
+  },
+  {
+    "id": "HPQA-2",
+    "domain": "HotpotQA",
+    "answer": "创建者是芬兰人林纳斯·托瓦兹。采用的许可证是GNU通用公共许可证(GPL)。\n\n这种回答基于原文提供的信息进行总结和重组，确保没有遗漏关键点，并且对每个主要问题都做出了明确的回答。",
+    "time": 12.5,
+    "correct": true,
+    "eagle": "CORRECT"
+  },
+  {
+    "id": "HPQA-3",
+    "domain": "HotpotQA",
+    "answer": "秦始皇是在公元前221年统一了六国。他主要推行的政策包括：\"书同文\"（即统一文字，把小篆作为全国的标准字体）、\"车同轨\"（即车辆和道路宽窄一样）、以及\"统一度量衡\"（即统一计量单位）等。\n\n这些政策有效地加强了中央集权，为秦朝成为第一个大一统的封建王朝奠定了基础。",
+    "time": 8.0,
+    "correct": true,
+    "eagle": "CORRECT"
+  },
+  {
+    "id": "HPQA-4",
+    "domain": "HotpotQA",
+    "answer": "瓦特在1769年获得了蒸汽机的专利。",
+    "time": 12.1,
+    "correct": true,
+    "eagle": "NEED_REVIEW"
+  },
+  {
+    "id": "HPQA-5",
+    "domain": "HotpotQA",
+    "answer": "辉瑞和Moderna这两家公司开发了COVID-19的mRNA疫苗。",
+    "time": 11.1,
+    "correct": true,
+    "eagle": "NEED_REVIEW"
+  }
+]

@@ -1,0 +1,126 @@
+# === 模型文件（太大，GitHub不允许） ===
+# 保留 models/ 下的配置文件，只排除模型二进制
+*.gguf
+*.tmp
+*.bin
+*.safetensors
+
+# === 编译产物 ===
+llama-cpp-v4flash/build/
+llama_cpp/
+*.dll
+*.exe
+*.lib
+*.obj
+*.o
+*.a
+*.so
+*.dylib
+
+# === 第三方源码（有自己的仓库） ===
+llama-cpp-v4flash/
+opencl-headers/
+llama-tools/
+
+# === Python虚拟环境 ===
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# === 安装包 ===
+*.zip
+*.msi
+*.exe
+cmake.zip
+LM-Studio-*.exe
+VulkanSDK-*.exe
+vs_buildtools.exe
+vulkan-sdk.exe
+
+# === 调试/临时文件 ===
+*.log
+*.txt
+!README.md
+debug*.py
+debug*.txt
+debug_out*.txt
+out.txt
+stderr.txt
+stdout.txt
+quick_out.txt
+quick_result.txt
+test_now*.txt
+test_14b_out*.txt
+test_1060_result*.txt
+test_35b_output.txt
+test_final.txt
+test_full_out.txt
+test_output.txt
+test_pipeline_output.txt
+test_e2e_vram_output.txt
+test_eagle_eye_output.txt
+vram_fold_output.txt
+v4flash_out.txt
+v4flash_debug.log
+mmap_test_output.txt
+e2e_result.txt
+speed_result.txt
+pipe_result.txt
+sub_result.txt
+eagle_eye_result.txt
+multi_domain_result*.txt
+create_err.txt
+create_log.txt
+create_out.txt
+ollama_*.txt
+pip_*.txt
+llama_server_log.txt
+full_output.txt
+10q_vs_v4_log.txt
+50q_*_log.txt
+
+# === 临时下载脚本（调试用） ===
+dl_llama2.py
+download_llama.ps1
+download_llama.py
+download_llama_log.txt
+download_loop.ps1
+download_modelscope.py
+download_qwen.py
+download_qwen235b.py
+download_qwen_fast.py
+download_qwen_mirror.py
+download_qwen_v2.py
+download_robust.py
+download_stream.py
+download_v4_gguf.py
+download_v4flash.py
+download_v4flash_final.py
+download_v4flash_hfxet.py
+download_v4flash_mirror.py
+download_v4flash_requests.py
+download_v4flash_resume.py
+download_v4flash_v2.py
+download_xet.py
+bg_download.ps1
+
+# === OpenCL编译辅助 ===
+opencl.def
+
+# === IDE/OS ===
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# === 环境配置（可能含密钥） ===
+.env

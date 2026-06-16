@@ -1,0 +1,146 @@
+{
+  "e1_benchmark": {
+    "correct": 5,
+    "total": 5,
+    "acc": 100.0,
+    "avg_time": 8.3,
+    "details": [
+      {
+        "id": "M1",
+        "correct": true,
+        "time": 10.6,
+        "eagle": "NEED_REVIEW",
+        "answer": "牛顿第二定律的公式是F=ma。"
+      },
+      {
+        "id": "M2",
+        "correct": true,
+        "time": 8.4,
+        "eagle": "NEED_REVIEW",
+        "answer": "线粒体在真核细胞中被称为能量工厂。"
+      },
+      {
+        "id": "M3",
+        "correct": true,
+        "time": 4.0,
+        "eagle": "CORRECT",
+        "answer": "法国大革命爆发于1789年。"
+      },
+      {
+        "id": "M4",
+        "correct": true,
+        "time": 10.1,
+        "eagle": "NEED_REVIEW",
+        "answer": "民法典共有7编，包括总则编、物权编、合同编、人格权编、婚姻家庭编、继承编和侵权责任编，一共包含1260条内容。这部法律自2021年1月1日起开始实施。"
+      },
+      {
+        "id": "T1",
+        "correct": true,
+        "time": 8.6,
+        "eagle": "NEED_REVIEW",
+        "answer": "青霉素是由亚历山大·弗莱明在1928年在伦敦发现的。"
+      }
+    ]
+  },
+  "e2_ablation": {
+    "full": {
+      "correct": 5,
+      "acc": 100.0,
+      "avg_time": 7.2
+    },
+    "no_eagle": {
+      "correct": 5,
+      "acc": 100.0,
+      "avg_time": 3.4
+    },
+    "no_compact": {
+      "correct": 5,
+      "acc": 100.0,
+      "avg_time": 3.9
+    },
+    "no_extract": {
+      "correct": 5,
+      "acc": 100.0,
+      "avg_time": 2.3
+    }
+  },
+  "e3_baseline": {
+    "1.5B": {
+      "correct": 5,
+      "acc": 100.0,
+      "avg_time": 1.9
+    },
+    "3B": {
+      "correct": 5,
+      "acc": 100.0,
+      "avg_time": 2.3
+    },
+    "Pipeline": {
+      "correct": 5,
+      "acc": 100.0,
+      "avg_time": 6.4
+    }
+  },
+  "e4_vram": [
+    {
+      "stage": "初始",
+      "used": 1641,
+      "free": 6316,
+      "total": 8188
+    },
+    {
+      "stage": "1.5B加载",
+      "used": 2853,
+      "free": 5104,
+      "total": 8188
+    },
+    {
+      "stage": "1.5B卸载",
+      "used": 1637,
+      "free": 6320,
+      "total": 8188
+    },
+    {
+      "stage": "3B加载",
+      "used": 3814,
+      "free": 4143,
+      "total": 8188
+    },
+    {
+      "stage": "3B卸载",
+      "used": 1660,
+      "free": 6297,
+      "total": 8188
+    },
+    {
+      "stage": "14B加载(VRAM折叠)",
+      "used": 7687,
+      "free": 270,
+      "total": 8188
+    },
+    {
+      "stage": "14B卸载",
+      "used": 1663,
+      "free": 6294,
+      "total": 8188
+    },
+    {
+      "stage": "管线-提取后",
+      "used": 2883,
+      "free": 5074,
+      "total": 8188
+    },
+    {
+      "stage": "管线-推理后",
+      "used": 5047,
+      "free": 2910,
+      "total": 8188
+    },
+    {
+      "stage": "管线-卸载后",
+      "used": 1664,
+      "free": 6293,
+      "total": 8188
+    }
+  ]
+}

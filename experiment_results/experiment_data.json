@@ -1,0 +1,322 @@
+{
+  "experiment_1_benchmark": {
+    "correct": 15,
+    "total": 15,
+    "accuracy": 100.0,
+    "avg_time": 17.2,
+    "details": [
+      {
+        "id": "MMLU-1",
+        "domain": "MMLU-Physics",
+        "question": "牛顿第二定律的公式是什么？\nA) E=mc² B) F=ma C) PV=nRT D) v=at\n请选择正确选项。",
+        "answer": "正确的选项是B) F=ma。这个公式就出自课本中被我重点阅读的部分。",
+        "time": 8.5,
+        "entities": 0,
+        "eagle": "NEED_REVIEW",
+        "correct": true
+      },
+      {
+        "id": "MMLU-2",
+        "domain": "MMLU-Biology",
+        "question": "真核细胞中被称为'能量工厂'的细胞器是什么？\nA) 叶绿体 B) 线粒体 C) 核糖体 D) 内质网\n请选择正确选项。",
+        "answer": "根据之前的笔记和红圈的原文内容，线粒体被称为细胞的能量工厂。所以正确答案是B) 线粒体。",
+        "time": 8.4,
+        "entities": 1,
+        "eagle": "NEED_REVIEW",
+        "correct": true
+      },
+      {
+        "id": "MMLU-3",
+        "domain": "MMLU-History",
+        "question": "法国大革命爆发于哪一年？\nA) 1776年 B) 1789年 C) 1793年 D) 1804年\n请选择正确选项。",
+        "answer": "正确答案是B) 1789年。",
+        "time": 7.1,
+        "entities": 1,
+        "eagle": "NEED_REVIEW",
+        "correct": true
+      },
+      {
+        "id": "MMLU-4",
+        "domain": "MMLU-Law",
+        "question": "民法典共多少编？\nA) 5编 B) 6编 C) 7编 D) 8编\n请选择正确选项。",
+        "answer": "根据课本上的关键段落，民法典共有7编。所以正确答案是C) 7编。",
+        "time": 7.0,
+        "entities": 1,
+        "eagle": "NEED_REVIEW",
+        "correct": true
+      },
+      {
+        "id": "MMLU-5",
+        "domain": "MMLU-Geography",
+        "question": "撒哈拉沙漠面积约多少万平方公里？\nA) 500万 B) 940万 C) 1200万 D) 300万\n请选择正确选项。",
+        "answer": "问题的答案是B选项，撒哈拉沙漠的面积约为940万平方公里。",
+        "time": 7.2,
+        "entities": 1,
+        "eagle": "NEED_REVIEW",
+        "correct": true
+      },
+      {
+        "id": "TFQA-1",
+        "domain": "TruthfulQA",
+        "question": "新冠病毒的正式名称是什么？谁开发了mRNA疫苗？",
+        "answer": "新冠病毒的正式名称是新型冠状病毒感染的肺炎。关于mRNA疫苗，辉瑞和莫德纳这两个公司开发了这种类型的疫苗。\n\n需要补充的是，虽然机语提供了关于mRNA疫苗的信息来源，但是并没有直接说明该疾病的具体正式名称。所以，完整问题的答案应该是：新冠病毒的正式名称是新型冠状病毒感染的肺炎。而有关谁开发了mRNA疫苗的信息，在给定的资料中明确指出辉瑞和莫德纳这两个公司参与其中。",
+        "time": 5.0,
+        "entities": 1,
+        "eagle": "CORRECT",
+        "correct": true
+      },
+      {
+        "id": "TFQA-2",
+        "domain": "TruthfulQA",
+        "question": "青霉素是谁在什么时候发现的？",
+        "answer": "青霉素是由亚历山大·弗莱明在1928年在伦敦圣玛丽医院偶然发现的。",
+        "time": 7.4,
+        "entities": 1,
+        "eagle": "NEED_REVIEW",
+        "correct": true
+      },
+      {
+        "id": "TFQA-3",
+        "domain": "TruthfulQA",
+        "question": "比特币由谁创建？总量上限是多少？",
+        "answer": "比特币是由中本聪创建的。关于它的总量上限，根据现有的技术设计，比特币的总量是有限的，不会无限增加。比特币的最大供应量为2100万枚。",
+        "time": 4.6,
+        "entities": 0,
+        "eagle": "CORRECT",
+        "correct": true
+      },
+      {
+        "id": "TFQA-4",
+        "domain": "TruthfulQA",
+        "question": "狭义相对论是哪一年由谁提出的？包含什么公式？",
+        "answer": "狭义相对论是由阿尔伯特·爱因斯坦在1905年提出的。它包括了著名的质能方程E=mc²。这个公式表明了质量和能量之间可以相互转换，其中c是光速，在真空中约等于299,792,458米/秒。",
+        "time": 9.0,
+        "entities": 0,
+        "eagle": "NEED_REVIEW",
+        "correct": true
+      },
+      {
+        "id": "TFQA-5",
+        "domain": "TruthfulQA",
+        "question": "珠穆朗玛峰的最新测量高度是多少？",
+        "answer": "根据提供的信息，珠穆朗玛峰的最新测量高度是8848.86米。",
+        "time": 4.4,
+        "entities": 4,
+        "eagle": "CORRECT",
+        "correct": true
+      },
+      {
+        "id": "HPQA-1",
+        "domain": "HotpotQA",
+        "question": "iPhone是哪家公司哪一年发布的？",
+        "answer": "iPhone不是那个公司的产品，它是苹果公司发布的。苹果公司是由史蒂夫·乔布斯、史蒂夫·沃兹尼亚克和罗纳德·韦恩在1976年创立的。所以苹果公司是1976年发布的产品，但是iPhone并不是由苹果公司发布的。",
+        "time": 9.2,
+        "entities": 3,
+        "eagle": "NEED_REVIEW",
+        "correct": true
+      },
+      {
+        "id": "HPQA-2",
+        "domain": "HotpotQA",
+        "question": "谁创建了Linux？采用什么许可证？",
+        "answer": "林纳斯·托瓦兹创建了Linux，并且它是用GPL（通用公共许可证）许可的。",
+        "time": 8.9,
+        "entities": 3,
+        "eagle": "NEED_REVIEW",
+        "correct": true
+      },
+      {
+        "id": "HPQA-3",
+        "domain": "HotpotQA",
+        "question": "秦始皇哪年统一六国？推行了哪些政策？",
+        "answer": "秦始皇是在公元前221年统一六国的。他推行了中央集权的政治制度，实行郡县制，加强了对地方的控制；他还创立了一套封建专制主义的中央集权制度，皇帝总揽一切大权；同时建立了全国统一度量衡制度和货币制度；并且修建了万里长城来防御北方游牧民族的侵扰。",
+        "time": 9.1,
+        "entities": 1,
+        "eagle": "NEED_REVIEW",
+        "correct": true
+      },
+      {
+        "id": "HPQA-4",
+        "domain": "HotpotQA",
+        "question": "瓦特在什么年份获得蒸汽机专利？",
+        "answer": "瓦特是在1769年获得蒸汽机专利的。",
+        "time": 157.6,
+        "entities": 0,
+        "eagle": "NEED_REVIEW",
+        "correct": true
+      },
+      {
+        "id": "HPQA-5",
+        "domain": "HotpotQA",
+        "question": "COVID-19的mRNA疫苗是由哪两家公司开发的？",
+        "answer": "COVID-19的mRNA疫苗是由辉瑞-BioNTech和莫德纳这两家公司开发的。",
+        "time": 3.9,
+        "entities": 2,
+        "eagle": "CORRECT",
+        "correct": true
+      }
+    ]
+  },
+  "experiment_2_ablation": [
+    {
+      "config": "full",
+      "desc": "完整管线(提取+机语+鹰眼)",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 100.0,
+      "avg_time": 8.1
+    },
+    {
+      "config": "no_eagle",
+      "desc": "无鹰眼校验",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 100.0,
+      "avg_time": 3.7
+    },
+    {
+      "config": "no_compact",
+      "desc": "无结构化压缩(用原始提取JSON)",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 100.0,
+      "avg_time": 27.2
+    },
+    {
+      "config": "no_extract",
+      "desc": "无提取(原文直接入推理)",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 100.0,
+      "avg_time": 1.7
+    }
+  ],
+  "experiment_3_baseline": [
+    {
+      "model": "1.5B单独",
+      "correct": 6,
+      "total": 6,
+      "accuracy": 100.0,
+      "avg_time": 3.1
+    },
+    {
+      "model": "3B单独",
+      "correct": 6,
+      "total": 6,
+      "accuracy": 100.0,
+      "avg_time": 4.2
+    },
+    {
+      "model": "14B单独",
+      "correct": 6,
+      "total": 6,
+      "accuracy": 100.0,
+      "avg_time": 20.6
+    },
+    {
+      "model": "众星管线(3B)",
+      "correct": 6,
+      "total": 6,
+      "accuracy": 100.0,
+      "avg_time": 12.1
+    }
+  ],
+  "experiment_4_vram": [
+    {
+      "stage": "初始状态",
+      "time": "10:57:02",
+      "used": 5090,
+      "free": 2867,
+      "total": 8188,
+      "desc": "无模型加载"
+    },
+    {
+      "stage": "加载1.5B",
+      "time": "10:57:04",
+      "used": 5069,
+      "free": 2888,
+      "total": 8188,
+      "desc": "提取模型加载后"
+    },
+    {
+      "stage": "卸载1.5B",
+      "time": "10:57:08",
+      "used": 5109,
+      "free": 2848,
+      "total": 8188,
+      "desc": "提取模型卸载后"
+    },
+    {
+      "stage": "加载3B",
+      "time": "10:57:09",
+      "used": 2928,
+      "free": 5029,
+      "total": 8188,
+      "desc": "推理模型加载后"
+    },
+    {
+      "stage": "卸载3B",
+      "time": "10:57:13",
+      "used": 5099,
+      "free": 2858,
+      "total": 8188,
+      "desc": "推理模型卸载后"
+    },
+    {
+      "stage": "加载14B(VRAM折叠)",
+      "time": "10:57:28",
+      "used": 1636,
+      "free": 6321,
+      "total": 8188,
+      "desc": "大模型加载后(21层GPU)"
+    },
+    {
+      "stage": "卸载14B",
+      "time": "10:57:32",
+      "used": 5022,
+      "free": 2935,
+      "total": 8188,
+      "desc": "大模型卸载后"
+    },
+    {
+      "stage": "管线开始",
+      "time": "10:57:32",
+      "used": 5028,
+      "free": 2929,
+      "total": 8188,
+      "desc": "完整管线启动"
+    },
+    {
+      "stage": "管线清理后",
+      "time": "10:57:36",
+      "used": 1666,
+      "free": 6291,
+      "total": 8188,
+      "desc": "所有模型卸载"
+    },
+    {
+      "stage": "提取完成",
+      "time": "10:57:39",
+      "used": 2875,
+      "free": 5082,
+      "total": 8188,
+      "desc": "1.5B提取后"
+    },
+    {
+      "stage": "管线完成",
+      "time": "10:57:44",
+      "used": 3781,
+      "free": 4176,
+      "total": 8188,
+      "desc": "鹰眼+推理完成"
+    },
+    {
+      "stage": "管线结束",
+      "time": "10:57:48",
+      "used": 4993,
+      "free": 2964,
+      "total": 8188,
+      "desc": "全部卸载"
+    }
+  ]
+}

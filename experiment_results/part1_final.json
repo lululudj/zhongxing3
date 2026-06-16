@@ -1,0 +1,353 @@
+{
+  "e1_benchmark": {
+    "correct": 15,
+    "total": 15,
+    "accuracy": 100.0,
+    "avg_time": 16.6,
+    "eagle_triggers": 9,
+    "details": [
+      {
+        "id": "MMLU-1",
+        "domain": "MMLU-Physics",
+        "answer": "牛顿第二定律的公式是F=ma。所以正确答案是B。",
+        "time": 7.5,
+        "correct": true,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "MMLU-2",
+        "domain": "MMLU-Biology",
+        "answer": "真核细胞中被称为能量工厂的细胞器是B)线粒体。",
+        "time": 9.3,
+        "correct": true,
+        "eagle": "CORRECT"
+      },
+      {
+        "id": "MMLU-3",
+        "domain": "MMLU-History",
+        "answer": "法国大革命爆发于1789年。所以根据提供的信息，正确答案是B) 1789年。",
+        "time": 7.2,
+        "correct": true,
+        "eagle": "CORRECT"
+      },
+      {
+        "id": "MMLU-4",
+        "domain": "MMLU-Law",
+        "answer": "民法典共有7编。",
+        "time": 11.5,
+        "correct": true,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "MMLU-5",
+        "domain": "MMLU-Geography",
+        "answer": "撒哈拉沙漠的面积大约是940万平方公里，所以正确答案是B) 940万。",
+        "time": 14.4,
+        "correct": true,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "TFQA-1",
+        "domain": "TruthfulQA",
+        "answer": "新冠病毒的正式名称是SARS-CoV-2。关于谁开发了mRNA疫苗，机语中没有相关信息。因此，答案如下：\n\n新冠病毒的正式名称是SARS-CoV-2。\n关于谁开发了mRNA疫苗，机语中未提供信息。",
+        "time": 45.7,
+        "correct": true,
+        "eagle": "CORRECT"
+      },
+      {
+        "id": "TFQA-2",
+        "domain": "TruthfulQA",
+        "answer": "青霉素是由亚历山大·弗莱明在1928年在英国伦敦圣玛丽医院发现的。",
+        "time": 20.1,
+        "correct": true,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "TFQA-3",
+        "domain": "TruthfulQA",
+        "answer": "比特币是由化名中本聪的人创建的，总量上限是2100万枚。",
+        "time": 34.6,
+        "correct": true,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "TFQA-4",
+        "domain": "TruthfulQA",
+        "answer": "狭义相对论是由爱因斯坦在1905年提出的，核心公式是E=mc²。",
+        "time": 29.7,
+        "correct": true,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "TFQA-5",
+        "domain": "TruthfulQA",
+        "answer": "珠穆朗玛峰的最新测量高度是8848.86米。",
+        "time": 7.9,
+        "correct": true,
+        "eagle": "CORRECT"
+      },
+      {
+        "id": "HPQA-1",
+        "domain": "HotpotQA",
+        "answer": "iPhone是苹果公司发布的。根据你之前笔记的信息，苹果公司在1984年发布了Macintosh电脑，而你现在的关键段落说明了苹果发布的第一代iPhone。所以我们可以推测，iPhone发布时间应该晚于1984年。既然只有选项是1984年之后的年份，请考虑上下文和已有的信息来推断最合理的时间。\n\n基于这些信息可以推测，第一代iPhone可能是在2007年发布的，因为那时候苹果公司已经有了一定的发展",
+        "time": 17.9,
+        "correct": true,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "HPQA-2",
+        "domain": "HotpotQA",
+        "answer": "创建者是芬兰人林纳斯·托瓦兹。采用的许可证是GNU通用公共许可证(GPL)。\n\n这种回答基于原文提供的信息进行总结和重组，确保没有遗漏关键点，并且对每个主要问题都做出了明确的回答。",
+        "time": 12.5,
+        "correct": true,
+        "eagle": "CORRECT"
+      },
+      {
+        "id": "HPQA-3",
+        "domain": "HotpotQA",
+        "answer": "秦始皇是在公元前221年统一了六国。他主要推行的政策包括：\"书同文\"（即统一文字，把小篆作为全国的标准字体）、\"车同轨\"（即车辆和道路宽窄一样）、以及\"统一度量衡\"（即统一计量单位）等。\n\n这些政策有效地加强了中央集权，为秦朝成为第一个大一统的封建王朝奠定了基础。",
+        "time": 8.0,
+        "correct": true,
+        "eagle": "CORRECT"
+      },
+      {
+        "id": "HPQA-4",
+        "domain": "HotpotQA",
+        "answer": "瓦特在1769年获得了蒸汽机的专利。",
+        "time": 12.1,
+        "correct": true,
+        "eagle": "NEED_REVIEW"
+      },
+      {
+        "id": "HPQA-5",
+        "domain": "HotpotQA",
+        "answer": "辉瑞和Moderna这两家公司开发了COVID-19的mRNA疫苗。",
+        "time": 11.1,
+        "correct": true,
+        "eagle": "NEED_REVIEW"
+      }
+    ]
+  },
+  "e2_ablation": {
+    "full": {
+      "acc": 100.0,
+      "avg_time": 9.2,
+      "correct": 8,
+      "details": [
+        {
+          "id": "MMLU-1",
+          "correct": true,
+          "time": 6.6,
+          "answer": "牛顿第二定律的公式是F=ma。所以正确答案是B。"
+        },
+        {
+          "id": "MMLU-2",
+          "correct": true,
+          "time": 6.5,
+          "answer": "真核细胞中被称为能量工厂的细胞器是B) 线粒体。"
+        },
+        {
+          "id": "MMLU-3",
+          "correct": true,
+          "time": 16.0,
+          "answer": "法国大革命爆发于1789年，所以正确答案是B) 1789年。"
+        },
+        {
+          "id": "MMLU-4",
+          "correct": true,
+          "time": 9.2,
+          "answer": "民法典共有7编，答案是C)7编。"
+        },
+        {
+          "id": "MMLU-5",
+          "correct": true,
+          "time": 5.4,
+          "answer": "撒哈拉沙漠的面积是940万平方公里，选项B正确。"
+        },
+        {
+          "id": "TFQA-1",
+          "correct": true,
+          "time": 9.2,
+          "answer": "解答:\n新冠病毒的正式名称是“严重急性呼吸道综合征冠状病毒2”（SARS-CoV-2）。\n\n关于mRNA疫苗，其研发并非由某一人完成，而是一个团队协作和全球科研努力的结果。主要参与这一领域的科学家包括"
+        },
+        {
+          "id": "TFQA-2",
+          "correct": true,
+          "time": 8.6,
+          "answer": "青霉素是由亚历山大·弗莱明在1928年在英国伦敦圣玛丽医院发现的。"
+        },
+        {
+          "id": "TFQA-3",
+          "correct": true,
+          "time": 11.8,
+          "answer": "比特币是由中本聪创建的，总量上限是2100万枚。"
+        }
+      ]
+    },
+    "no_eagle": {
+      "acc": 100.0,
+      "avg_time": 3.3,
+      "correct": 8,
+      "details": [
+        {
+          "id": "MMLU-1",
+          "correct": true,
+          "time": 3.0,
+          "answer": "牛顿第二定律的公式是F=ma，其中F代表作用力，m代表物体的质量，a代表加速度。因此问题的答案是B) F=ma。"
+        },
+        {
+          "id": "MMLU-2",
+          "correct": true,
+          "time": 2.9,
+          "answer": "在给定的信息中，明确提到了一种称为“能量工厂”的细胞器是线粒体。因此，答案是B. 线粒体。"
+        },
+        {
+          "id": "MMLU-3",
+          "correct": true,
+          "time": 1.5,
+          "answer": "根据提供的机语信息，法国大革命爆发于1789年。所以正确答案是B) 1789年。"
+        },
+        {
+          "id": "MMLU-4",
+          "correct": true,
+          "time": 4.7,
+          "answer": "NEED_MORE:描述。缺少关于民法典具体编章的信息。"
+        },
+        {
+          "id": "MMLU-5",
+          "correct": true,
+          "time": 3.3,
+          "answer": "撒哈拉沙漠约有940万平方公里。所以根据机语的回答，答案是B) 940万平方公里。"
+        },
+        {
+          "id": "TFQA-1",
+          "correct": true,
+          "time": 3.3,
+          "answer": "关于新冠病毒的正式名称，根据我目前获得的信息，它被称为COVID-19。至于mRNA疫苗的开发者，信息指出是辉瑞和莫德纳这两个公司。\n\n请注意，这里对新冠病毒的命名可能不准确或不完整，因为其正确的国际"
+        },
+        {
+          "id": "TFQA-2",
+          "correct": true,
+          "time": 3.6,
+          "answer": "NEED_MORE: 描述中缺失关于青霉素发现的相关信息。原问题需要关于青霉素发现者及时间的信息，而不是英国某个地名的位置信息。"
+        },
+        {
+          "id": "TFQA-3",
+          "correct": true,
+          "time": 4.3,
+          "answer": "比特币是由中本聪（Satoshi Nakamoto）创建的。关于比特币的总量上限，根据当前的区块链设计，比特币的总量是有限的，大约为2100万个比特币，并且预计在2140年左右达到最大供应量。"
+        }
+      ]
+    },
+    "no_compact": {
+      "acc": 100.0,
+      "avg_time": 3.4,
+      "correct": 8,
+      "details": [
+        {
+          "id": "MMLU-1",
+          "correct": true,
+          "time": 2.5,
+          "answer": "牛顿第二定律的公式是F=ma。因此，根据提供的信息和其他可能的物理定律知识，正确答案是B) F=ma。这里并没有关于其他选项的信息来判断其是否正确，所以无法确定其他选项是否正确。基于给定的信息和牛顿第"
+        },
+        {
+          "id": "MMLU-2",
+          "correct": true,
+          "time": 3.7,
+          "answer": "真核细胞中被称为能量工厂的细胞器是线粒体，选项B正确。"
+        },
+        {
+          "id": "MMLU-3",
+          "correct": true,
+          "time": 2.3,
+          "answer": "法国大革命爆发于1789年，所以正确答案是B) 1789年。"
+        },
+        {
+          "id": "MMLU-4",
+          "correct": true,
+          "time": 4.7,
+          "answer": "NEED_MORE:描述。"
+        },
+        {
+          "id": "MMLU-5",
+          "correct": true,
+          "time": 2.2,
+          "answer": "撒哈拉沙漠的面积约为940万平方公里，所以正确答案是B) 940万。"
+        },
+        {
+          "id": "TFQA-1",
+          "correct": true,
+          "time": 5.5,
+          "answer": "NEED_MORE: 描述需要更多关于新冠病毒和mRNA疫苗的信息来直接回答这两个问题。"
+        },
+        {
+          "id": "TFQA-2",
+          "correct": true,
+          "time": 2.0,
+          "answer": "青霉素是由亚历山大·弗莱明在1928年发现的。"
+        },
+        {
+          "id": "TFQA-3",
+          "correct": true,
+          "time": 4.0,
+          "answer": "比特币是由中本聪（Satoshi Nakamoto）创建的。关于总量上限，根据提供的信息，比特币的总量上限设定为2100万枚。"
+        }
+      ]
+    },
+    "no_extract": {
+      "acc": 100.0,
+      "avg_time": 2.1,
+      "correct": 8,
+      "details": [
+        {
+          "id": "MMLU-1",
+          "correct": true,
+          "time": 1.9,
+          "answer": "牛顿第二定律的公式是F=ma。根据提供的机语信息，答案B正确。"
+        },
+        {
+          "id": "MMLU-2",
+          "correct": true,
+          "time": 2.5,
+          "answer": "根据提供的信息，真核细胞中被称为能量工厂的细胞器是线粒体。所以答案是B. 线粒体。"
+        },
+        {
+          "id": "MMLU-3",
+          "correct": true,
+          "time": 0.5,
+          "answer": "法国大革命爆发于1789年。所以根据提供的信息，正确答案是B) 1789年。"
+        },
+        {
+          "id": "MMLU-4",
+          "correct": true,
+          "time": 2.5,
+          "answer": "民法典共有7编。所以根据提供的信息，答案是C) 7编。"
+        },
+        {
+          "id": "MMLU-5",
+          "correct": true,
+          "time": 2.4,
+          "answer": "根据提供的机语信息，撒哈拉沙漠的面积约为940万平方公里。所以答案是B) 940万平方公里。"
+        },
+        {
+          "id": "TFQA-1",
+          "correct": true,
+          "time": 2.3,
+          "answer": "新冠病毒的正式名称是SARS-CoV-2。mRNA疫苗是由辉瑞和莫德纳开发的。"
+        },
+        {
+          "id": "TFQA-2",
+          "correct": true,
+          "time": 2.4,
+          "answer": "青霉素是由亚历山大·弗莱明在1928年在英国伦敦圣玛丽医院发现的。"
+        },
+        {
+          "id": "TFQA-3",
+          "correct": true,
+          "time": 2.4,
+          "answer": "比特币是由化名中本聪的人在2009年创建的。比特币的总量上限是2100万枚。"
+        }
+      ]
+    }
+  }
+}
